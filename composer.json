@@ -12,7 +12,9 @@
         "encore/laravel-admin": "^1.6",
         "fideloper/proxy": "^4.0",
         "laravel/framework": "5.8.*",
-        "laravel/tinker": "^1.0"
+        "laravel/tinker": "^1.0",
+        "workerman/gateway-worker": "^3.0",
+        "workerman/workerman": "^3.5"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",

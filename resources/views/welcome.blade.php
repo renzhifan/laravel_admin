@@ -80,20 +80,31 @@
             @endif
 
             <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                <div class="title m-b-md" id="root">
+                    @{{time}}
                 </div>
             </div>
         </div>
     </body>
+    <script src="https://unpkg.com/vue@2.1.3/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el:'#root',
+
+            data: {
+                time:''
+            },
+        });
+        ws = new WebSocket("ws://127.0.0.1:2000");
+        ws.onopen = function() {
+            console.log("连接成功");
+            ws.send('tom');
+            console.log("给服务端发送一个字符串：tom");
+        };
+        ws.onmessage = function(e) {
+            app.time=e.data
+            console.log("收到服务端的消息：" + e.data);
+        };
+
+    </script>
 </html>

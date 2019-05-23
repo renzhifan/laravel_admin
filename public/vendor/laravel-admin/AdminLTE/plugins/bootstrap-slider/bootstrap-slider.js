@@ -439,7 +439,7 @@
 
 			******************************************/
 
-			// Bind keyboard handlers
+			// Bind keyboard Handlers
 			this.handle1Keydown = this._keydown.bind(this, 0);
 			this.handle1.addEventListener("keydown", this.handle1Keydown, false);
 
@@ -447,16 +447,16 @@
 			this.handle2.addEventListener("keydown", this.handle2Keydown, false);
 
 			if (this.touchCapable) {
-				// Bind touch handlers
+				// Bind touch Handlers
 				this.mousedown = this._mousedown.bind(this);
 				this.sliderElem.addEventListener("touchstart", this.mousedown, false);
 			} else {
-				// Bind mouse handlers
+				// Bind mouse Handlers
 				this.mousedown = this._mousedown.bind(this);
 				this.sliderElem.addEventListener("mousedown", this.mousedown, false);
 			}
 
-			// Bind tooltip-related handlers
+			// Bind tooltip-related Handlers
 			if(this.options.tooltip === 'hide') {
 				this._addClass(this.tooltip, 'hide');
 				this._addClass(this.tooltip_min, 'hide');
@@ -582,7 +582,7 @@
 			},
 
 			destroy: function(){
-				// Remove event handlers on slider elements
+				// Remove event Handlers on slider elements
 				this._removeSliderEventHandlers();
 
 				// Remove the slider from the DOM
@@ -596,7 +596,7 @@
 				// Remove data values
 				this.element.removeAttribute("data");
 
-				// Remove JQuery handlers/data
+				// Remove JQuery Handlers/data
 				if($) {
 					this._unbindJQueryEventHandlers();
 					this.$element.removeData('slider');
@@ -973,11 +973,11 @@
 					return false;
 				}
 				if (this.touchCapable) {
-					// Touch: Unbind touch event handlers:
+					// Touch: Unbind touch event Handlers:
 					document.removeEventListener("touchmove", this.mousemove, false);
 					document.removeEventListener("touchend", this.mouseup, false);
 				} else {
-					// Unbind mouse event handlers:
+					// Unbind mouse event Handlers:
 					document.removeEventListener("mousemove", this.mousemove, false);
 					document.removeEventListener("mouseup", this.mouseup, false);
 				}

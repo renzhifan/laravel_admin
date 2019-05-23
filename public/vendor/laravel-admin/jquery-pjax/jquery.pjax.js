@@ -543,7 +543,7 @@ function fallbackPjax(options) {
 }
 
 // Internal: Abort an XmlHttpRequest if it hasn't been completed,
-// also removing its event handlers.
+// also removing its event Handlers.
 function abortXHR(xhr) {
   if ( xhr && xhr.readyState < 4) {
     xhr.onreadystatechange = $.noop
